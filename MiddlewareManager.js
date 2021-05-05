@@ -39,7 +39,11 @@ class MiddlewareManager {
         }
     }
 
-
+    /**
+     * Handles the input, 
+     * starts the middlewares execution chain.
+     * @param {Object} input 
+     */
     async handleInput(input) {
         try {
             await this.executeMiddleware(input);
@@ -52,7 +56,9 @@ class MiddlewareManager {
     }
 
     /**
-     * 
+     * Executes the middleware chain,
+     * Keeping a recursive bind to recall it self
+     * to next one from the inside of the current one.
      * @param {Object} input 
      * @param {Number} remainingMiddlewares 
      */
