@@ -16,4 +16,4 @@ function printReverseUser(input, next) {
 }
 
 
-app.handleInput({ route: 'addUser', name: 'lolo' })
+app.handleInput({ route: 'addUser', name: 'university' })

@@ -1,6 +1,6 @@
 {
-  "name": "my-middleware",
-  "version": "1.0.0",
+  "name": "@d4g0/middleware-manager",
+  "version": "0.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
