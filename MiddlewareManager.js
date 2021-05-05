@@ -8,22 +8,37 @@ class MiddlewareManager {
         }
     }
 
-    use({
-        route, /* string */
-        middleware /* function*/
-    }) {
+    /**
+     * Subscribe a middleware or
+     * a group comma separated middlewares functions
+     * to the Manager
+     * @param {String} Route
+     * @param {Function } Middleware
+     */
+    use(
+        // route, /* string */
+        // middleware /* function or comma separated list of fucntions*/
+    ) {
+
         // case custom route
+        const route = [...arguments][0];
         if (route && typeof route == 'string') {
-            // case non existing route
+            // case non existing route in Manager Middlewares
             if (!this.middlewares[route]) {
                 this.middlewares[route] = [];
             }
 
-            if (middleware && typeof middleware == 'function') {
-                this.middlewares[route].push(middleware)
+            const middlewares = [...arguments].slice(1) // ;
+
+
+            for (let m of middlewares) {
+
+                if (typeof m == 'function') {
+                    this.middlewares[route].push(m)
+                }
             }
 
-            // console.log(this.middlewares)
+
         }
 
     }
@@ -53,15 +68,13 @@ class MiddlewareManager {
     async executeMiddleware(input, remainingMiddlewares = null) {
         let MM = this;
 
-        // console.log('executeMiddleware ', { input, remainingMiddlewares });
 
         if (input.route && this.middlewares[input.route]) {
 
-            
-            
+
+
             if (typeof remainingMiddlewares == "number") {
-                
-                // console.log('executeMiddleware /if_1', { input, remainingMiddlewares });
+
 
                 if (remainingMiddlewares > 0) {
 
@@ -93,11 +106,6 @@ class MiddlewareManager {
 
     }
 }
-
-
-//      0   1   
-//      1   2  
-
 
 
 module.exports = MiddlewareManager;

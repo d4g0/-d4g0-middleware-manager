@@ -1,8 +1,7 @@
 const MiddlewareManager = require('./MiddlewareManager.js');
 const app = new MiddlewareManager();
 
-app.use({ route: 'addUser', middleware: printUser });
-app.use({ route: 'addUser', middleware: printReverseUser });
+app.use('addUser', printUser, printReverseUser);
 
 
 
