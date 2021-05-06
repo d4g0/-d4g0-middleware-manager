@@ -5,5 +5,19 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon index.js"
-  }
+  },
+  "description": "A simple and plugable MiddlewareManager for arrange logic in `cli` apps.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/d4g0/-d4g0-middleware-manager.git"
+  },
+  "keywords": [
+    "middleware",
+    "manager"
+  ],
+  "author": "d4g0",
+  "bugs": {
+    "url": "https://github.com/d4g0/-d4g0-middleware-manager/issues"
+  },
+  "homepage": "https://github.com/d4g0/-d4g0-middleware-manager#readme"
 }
