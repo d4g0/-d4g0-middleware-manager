@@ -1,13 +1,3 @@
-# Middleware Manager
-
-A simple and plugable MiddlewareManager for arrange logic in `cli` apps.
-
-
-## How to use it
-
-```js
-// example.js
-
 const MiddlewareManager = require('./index.js');
 const app = new MiddlewareManager();
 
@@ -27,4 +17,3 @@ function printReverseUser(input, next) {
 
 
 app.handleInput({ route: 'addUser', name: 'university' })
-```

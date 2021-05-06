@@ -1,10 +1,10 @@
 {
   "name": "@d4g0/middleware-manager",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon index.js"
+    "dev": "nodemon example.js"
   },
   "description": "A simple and plugable MiddlewareManager for arrange logic in `cli` apps.",
   "repository": {
