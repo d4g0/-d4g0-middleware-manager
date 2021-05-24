@@ -27,4 +27,14 @@ function printReverseUser(input, next) {
 
 
 app.handleInput({ route: 'addUser', name: 'university' })
+
+
+// Also can register multiple routes 
+// for the same middleware function
+// to use routes like shortcuts
+
+app.use(['name', '-n'], function nameReport(input, next) {
+    console.log(`Doing a name reporting`);
+    console.log(input.name)
+})
 ```
