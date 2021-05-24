@@ -36,6 +36,29 @@ class MiddlewareManager {
                     this.middlewares[route].push(m)
                 }
             }
+
+        }
+
+        else if (Array.isArray([...arguments][0])) {
+            const routes = [...arguments][0];
+
+            for (let route of routes) {
+                // case non existing route in MiddlewareManager 
+                if (!this.middlewares[route]) {
+                    this.middlewares[route] = [];
+                }
+
+                const middlewares = [...arguments].slice(1);
+
+                for (let m of middlewares) {
+
+                    if (typeof m == 'function') {
+                        this.middlewares[route].push(m)
+                    }
+                }
+            }
+
+
         }
     }
 
